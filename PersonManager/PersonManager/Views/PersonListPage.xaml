@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="PersonManager.Views.PersonListPage">
+             x:Class="PersonManager.Views.PersonListPage"
+             Title="People">
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="Save" Text="New" Icon="ic_stat_add.png" Priority="0" Order="Primary" Clicked="Save_Clicked"/>
     </ContentPage.ToolbarItems>
@@ -29,7 +30,8 @@
                 </ListView.ItemTemplate>
                 <ListView.Footer>
                     <StackLayout>
-                        <Label Text="{Binding PersonCount, StringFormat='Total: {0}'}"/>
+                        <Label Text="{Binding PersonCount, StringFormat='Total: {0}'}" 
+                               HorizontalOptions="End"/>
                     </StackLayout>
                 </ListView.Footer>
             </ListView>

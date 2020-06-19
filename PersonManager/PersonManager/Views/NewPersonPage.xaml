@@ -11,12 +11,11 @@
         <StackLayout Padding="30,50,30,30" VerticalOptions="StartAndExpand">
             
             <Label Text="Name" TextColor="Black"/>
-            <Entry Text="{Binding Name}" TextColor="Black" Keyboard="Text"> 
+            <Entry Text="{Binding Name}" TextColor="Black" MaxLength="30" Keyboard="Text"> 
                 <Entry.Behaviors>
                     <behavior1:EntryValidatorBehavior
                         IsCheckEmpty="True"
                         IsCheckAlphaName="True"
-                        MaxLength="30"
                         x:Name="NameValidator">
                     </behavior1:EntryValidatorBehavior>
                 </Entry.Behaviors>       
@@ -28,7 +27,7 @@
                 FontSize="12"/>
 
             <Label Text="Age" TextColor="Black"/>
-            <Entry Text="{Binding Age}" TextColor="Black" Keyboard="Numeric">
+            <Entry Text="{Binding Age}" TextColor="Black" MaxLength="2" Keyboard="Numeric">
                 <Entry.Behaviors>
                 <behavior1:EntryValidatorBehavior
                     IsCheckEmpty="True"

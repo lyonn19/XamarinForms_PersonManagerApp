@@ -15,7 +15,7 @@ namespace PersonManager
 
             MainPage = new NavigationPage(new MainPage() 
             {
-                BarBackgroundColor = Color.Orange
+                Title = ""
             });
         }
 
