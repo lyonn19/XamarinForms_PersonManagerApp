@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:behavior1="clr-namespace:PersonManager.Behaviors"
+             mc:Ignorable="d"
+             x:Class="PersonManager.Views.NewPersonPage"
+             Title="New Person">
+    <ContentPage.Content>
+        <StackLayout Padding="30,50,30,30" VerticalOptions="StartAndExpand">
+            
+            <Label Text="Name" TextColor="Black"/>
+            <Entry Text="{Binding Name}" TextColor="Black" Keyboard="Text"> 
+                <Entry.Behaviors>
+                    <behavior1:EntryValidatorBehavior
+                        IsCheckEmpty="True"
+                        IsCheckAlphaName="True"
+                        MaxLength="30"
+                        x:Name="NameValidator">
+                    </behavior1:EntryValidatorBehavior>
+                </Entry.Behaviors>       
+            </Entry>
+
+            <Label Text="{Binding Source={x:Reference NameValidator}, Path=Message}" 
+                IsVisible="{Binding Source={x:Reference NameValidator}, Path=IsVisibleMessage}"
+                TextColor="Red"
+                FontSize="12"/>
+
+            <Label Text="Age" TextColor="Black"/>
+            <Entry Text="{Binding Age}" TextColor="Black" Keyboard="Numeric">
+                <Entry.Behaviors>
+                <behavior1:EntryValidatorBehavior
+                    IsCheckEmpty="True"
+                    IsCheckNumber="True"
+                    x:Name="AgeValidator">
+                </behavior1:EntryValidatorBehavior>
+                </Entry.Behaviors>
+            </Entry>
+
+            <Label Text="{Binding Source={x:Reference AgeValidator}, Path=Message}" 
+                IsVisible="{Binding Source={x:Reference AgeValidator}, Path=IsVisibleMessage}"
+                TextColor="Red"
+                FontSize="12"/>
+
+            <Button Text="SAVE" Clicked="Button_Clicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

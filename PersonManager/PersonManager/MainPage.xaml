@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PersonManager.MainPage">
+
+    <StackLayout Padding="50">
+        <!-- Place new controls here -->
+        <Label Text="Welcome Person Manager System!" HorizontalOptions="Center"/>
+
+        <Image Source="logogbs.png" Margin="100"/>
+
+        <Button Text="Person List" BorderWidth="1" BorderColor="Black" Clicked="Button_Clicked_1"/>
+
+        <Button Text="Oldest Person" BorderWidth="1" BorderColor="Black" Command="{Binding OldestPersonCommand}"/>
+
+    </StackLayout>
+
+</ContentPage>
